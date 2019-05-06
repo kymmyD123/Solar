@@ -1,0 +1,232 @@
+.system {
+    position: relative;
+    height: 900px;
+    width: 900px;
+    margin: 40px auto;
+}
+
+.star{
+    left: calc(50% - 50% * .5);
+    top: calc(50% - 50% * .5);
+    border: 1px solid #333;
+    border-radius: 50%;
+    display: block;
+    position: absolute;
+}
+
+.planet {
+    border: 1px solid #333;
+    border-radius: 50%;
+    display: block;
+    position: absolute;
+}
+
+.planet::before{
+    content: "";
+    position: absolute;
+    display: block;
+    border-radius: 50%;
+}
+
+.sun {
+    height: 65px;
+    left: calc(50% - 33px);
+    top: calc(50% - 33px);
+    width: 65px;
+    background: #FBBE00;
+    border: 0;
+    box-shadow: 0 0 200px 10px rgba(255, 255, 12, 0.8);
+    z-index: 2;
+    transition: box-shadow 0.5s;
+}
+
+.sun:hover{
+    box-shadow: 0 0 200px 50px rgba(255, 255, 12, 0.8);
+}
+
+.planet:nth-of-type(1) {
+    left: calc(50% - 65px);
+    top: calc(50% - 65px);
+    width: 130px;
+    height: 130px;
+    -webkit-animation: orbit 2.6s infinite linear -9s;
+    animation: orbit 2.6s infinite linear -9s;
+}
+
+.planet:nth-of-type(1)::before {
+    top: 5px;
+    left: 25px;
+    width: 10px;
+    height: 10px;
+    background: #A4ABAD;
+}
+
+.planet:nth-of-type(2) {
+    left: calc(50% - 95px);
+    top: calc(50% - 95px);
+    width: 190px;
+    height: 190px;
+    -webkit-animation: orbit 4.1s infinite linear -8s;
+    animation: orbit 4.1s infinite linear -8s;
+}
+
+.planet:nth-of-type(2)::before {
+    top: 7px;
+    left: 35px;
+    width: 15px;
+    height: 15px;
+    background: #C76A33;
+}
+
+.planet:nth-of-type(3) {
+    left: calc(50% - 125px);
+    top: calc(50% - 125px);
+    width: 250px;
+    height: 250px;
+    -webkit-animation: orbit 5.6s infinite linear -7s;
+    animation: orbit 5.6s infinite linear -7s;
+}
+
+.planet:nth-of-type(3)::before {
+    top: 10px;
+    left: 45px;
+    width: 20px;
+    height: 20px;
+    background: #3D7086;
+}
+
+.planet:nth-of-type(4) {
+    left: calc(50% - 200px);
+    top: calc(50% - 200px);
+    width: 400px;
+    height: 400px;
+    -webkit-animation: orbit 7.1s infinite linear -6s;
+    animation: orbit 7.1s infinite linear -6s;
+}
+
+.planet:nth-of-type(4)::before {
+    left: 115px;
+    top: 7px;
+    width: 15px;
+    height: 15px;
+    background: #CC3517;
+}
+
+.planet:nth-of-type(5) {
+    left: calc(50% - 250px);
+    top: calc(50% - 250px);
+    width: 500px;
+    height: 500px;
+    -webkit-animation: orbit 8.6s infinite linear -5s;
+    animation: orbit 8.6s infinite linear -5s;
+}
+
+.planet:nth-of-type(5)::before {
+    left: 110px;
+    top: 15px;
+    width: 35px;
+    height: 35px;
+    background: #846D54;
+}
+
+.planet:nth-of-type(6) {
+    left: calc(50% - 300px);
+    top: calc(50% - 300px);
+    width: 600px;
+    height: 600px;
+    -webkit-animation: orbit 10.1s infinite linear -4s;
+    animation: orbit 10.1s infinite linear -4s;
+}
+
+.planet:nth-of-type(6)::before {
+    height: 35px;
+    left: 140px;
+    top: 18px;
+    width: 35px;
+    background: #D5AD78;
+}
+
+.planet:nth-of-type(6)::after {
+    content: "";
+    position: absolute;
+    display: block;
+    left: 131px;
+    top: 4px;
+    width: 51px;
+    height: 35px;
+    border-bottom: 6px solid #534334;
+    border-radius: 40%;
+}
+
+.planet:nth-of-type(7) {
+    left: calc(50% - 350px);
+    top: calc(50% - 350px);
+    width: 700px;
+    height: 700px;
+    -webkit-animation: orbit 11.6s infinite linear -3s;
+    animation: orbit 11.6s infinite linear -3s;
+}
+
+.planet:nth-of-type(7)::before {
+    height: 25px;
+    left: 195px;
+    top: 17px;
+    width: 25px;
+    background: #9EE0FB;
+}
+
+.planet:nth-of-type(8) {
+    left: calc(50% - 400px);
+    top: calc(50% - 400px);
+    width: 800px;
+    height: 800px;
+    -webkit-animation: orbit 13.1s infinite linear -2s;
+    animation: orbit 13.1s infinite linear -2s;
+}
+
+.planet:nth-of-type(8)::before {
+    height: 25px;
+    left: 235px;
+    top: 17px;
+    width: 25px;
+    background: #2E57CD;
+}
+
+.planet:nth-of-type(9) {
+    left: calc(50% - 450px);
+    top: calc(50% - 450px);
+    width: 900px;
+    height: 900px;
+    -webkit-animation: orbit 14.1s infinite linear -1s;
+    animation: orbit 14.1s infinite linear -1s;
+}
+
+.planet:nth-of-type(9)::before {
+    height: 10px;
+    left: 345px;
+    top: 5px;
+    width: 10px;
+    background: #B7B7B8;
+}
+
+@-webkit-keyframes orbit {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes orbit {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
